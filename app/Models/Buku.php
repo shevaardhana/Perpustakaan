@@ -22,4 +22,8 @@ class Buku extends Model
     {
         return $this->belongsToMany(kategori::class, 'kategori_id');
     }
+
+    public function getPhotoAttribute($value){
+        return url('storage/' . $value);
+    }
 }

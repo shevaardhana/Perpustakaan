@@ -33,7 +33,7 @@
 
     <!-- Nav Item - Utilities Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
+        <a class="nav-link collapsed" href="{{route('kategori.index')}}">
             <i class="fas fa-tag"></i>
             <span>Kategori</span>
         </a>

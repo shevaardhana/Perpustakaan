@@ -5,16 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Kategori extends Model
+class Category extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'kategori_id',
+        'categories_id',
         'kategori'
     ];
 
-    public function buku(){
-        return $this->belongsTo(Buku::class,'kategori_id','id');
+    public function books(){
+        return $this->belongsTo(Book::class,'categories_id','id');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBukuTable extends Migration
+class CreateTransactionDetailsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,11 @@ class CreateBukuTable extends Migration
      */
     public function up()
     {
-        Schema::create('buku', function (Blueprint $table) {
+        Schema::create('transaction_details', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('judul');
-            $table->string('photo');
-            $table->longText('deskripsi');
-            $table->integer('kategori_id');
-            $table->date('tanggal_terbit');
-            $table->integer('stock');
+            $table->integer('transaction_headers_id');
+            $table->integer('books_id');
+            $table->integer('jumlah_buku');
             $table->timestamps();
         });
     }
@@ -32,6 +29,6 @@ class CreateBukuTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('buku');
+        Schema::dropIfExists('transaction_details');
     }
 }

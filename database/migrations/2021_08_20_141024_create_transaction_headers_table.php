@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTransaksiHeaderTable extends Migration
+class CreateTransactionHeadersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,17 @@ class CreateTransaksiHeaderTable extends Migration
      */
     public function up()
     {
-        Schema::create('transaksi_header', function (Blueprint $table) {
+        Schema::create('transaction_headers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('no_induk_siswa');
+            $table->string('no_siswa');
             $table->string('nama');
             $table->string('email');
             $table->string('no_tlp');
             $table->longText('alamat');
-            $table->date('tanggal'); //tgl pelayanan
+            $table->date('tanggal_pinjam');
+            $table->date('tanggal_pengembalian');
             $table->integer('lama_pinjam');
-            $table->integer('user_id'); //nama penjaga
+            $table->integer('users_id'); //nama penjaga
             $table->string('status');
             $table->timestamps();
         });
@@ -35,6 +36,6 @@ class CreateTransaksiHeaderTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('transaksi_header');
+        Schema::dropIfExists('transaction_headers');
     }
 }

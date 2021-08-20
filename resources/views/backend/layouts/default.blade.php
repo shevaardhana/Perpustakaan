@@ -21,7 +21,7 @@
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
-
+            @include('sweetalert::alert')
             <!-- Main Content -->
             <div id="content">
                 {{-- navbar --}}

@@ -5,25 +5,27 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Buku extends Model
+class Book extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'judul',
+        'slug',
         'photo',
         'deskripsi',
-        'kategori_id',
+        'categories_id',
         'tanggal_terbit',
         'stock'
     ];
 
-    public function kategori_list()
+    public function category_list()
     {
-        return $this->belongsToMany(kategori::class, 'kategori_id');
+        return $this->hasMany(Category::class, 'categories_id');
     }
 
-    public function getPhotoAttribute($value){
+    public function getPhotoAttribute($value)
+    {
         return url('storage/' . $value);
     }
 }

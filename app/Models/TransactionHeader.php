@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class TransaksiHeader extends Model
+class TransactionHeaders extends Model
 {
     use HasFactory;
 
@@ -15,19 +15,20 @@ class TransaksiHeader extends Model
         'email',
         'no_tlp',
         'alamat',
-        'tanggal',
+        'tanggal_pinjam',
+        'tanggal_pengembalian',
         'lama_pinjam',
-        'user_id',
+        'users_id',
         'status'
     ];
 
     public function user()
     {
-        return $this->hasMany(User::class, 'user_id');
+        return $this->hasMany(User::class, 'users_id');
     }
 
     public function details()
     {
-        return $this->hasMany(TransaksiDetail::class, 'transaksi_header_id');
+        return $this->hasMany(TransactionDetails::class, 'transaksi_header_id');
     }
 }

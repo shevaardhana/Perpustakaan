@@ -17,4 +17,6 @@ Route::get('/', [App\Http\Controllers\DashBoardController::class, 'index'])->mid
 
 Auth::routes();
 
+Route::resource('kategori', 'KategoriController');
+
 

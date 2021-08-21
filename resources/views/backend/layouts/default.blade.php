@@ -33,7 +33,9 @@
     </div>
 
     {{-- script --}}
+    @stack('before-script')
     @include('backend.includes.script')
+    @stack('after-script')
 </body>
 
 </html>

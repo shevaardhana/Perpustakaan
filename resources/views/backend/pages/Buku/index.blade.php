@@ -3,13 +3,13 @@
 @section('content')
 <div class="d-sm-flex justify-content-end mb-4">
     <a href="{{route('kategori.create')}}" class="btn btn-sm btn-primary shadow-sm">
-        <i class="fas fa-plus fa-sm text-white-100"></i> Tambah Data Kategori
+        <i class="fas fa-plus fa-sm text-white-100"></i> Tambah Data Buku
     </a>
 </div>
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h1 class="d-sm-flex d-flex justify-content-center text-primary">Data Kategori</h1>
+        <h1 class="d-sm-flex d-flex justify-content-center text-primary">Data Buku</h1>
     </div>
 
     <div class="card-body">
@@ -18,7 +18,10 @@
                 <thead class="thead-dark text-center">
                     <tr>
                         <th>No</th>
+                        <th>Judul</th>
+                        <th>Photo</th>
                         <th>Kategori</th>
+                        <th>Tanggal terbit</th>
                         <th>Action</th>
                     </tr>
                 </thead>

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CategoriesRequest;
 use Illuminate\Http\Request;
 use App\Models\Category;
-use App\Http\Requests\KategoriRequest;
-use alert;
+use Alert;
 
 class KategoriController extends Controller
 {
@@ -28,7 +28,7 @@ class KategoriController extends Controller
     public function index()
     {
         $items = Category::all();
-        return view('backend.pages.kategori.index');
+        return view('backend.pages.kategori.index', compact('items'));
     }
 
     /**
@@ -38,7 +38,7 @@ class KategoriController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.pages.kategori.create');
     }
 
     /**
@@ -47,9 +47,13 @@ class KategoriController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CategoriesRequest $request)
     {
-        //
+        $data = $request->all();
+        Category::create($data);
+
+        Alert::success('Success', 'Berhasil menambahkan Data Kategori terbaru');
+        return redirect()->route('kategori.index');
     }
 
     /**
@@ -71,7 +75,10 @@ class KategoriController extends Controller
      */
     public function edit($id)
     {
-        //
+        $items = Category::find($id);
+        return view('backend.pages.kategori.edit')->with([
+            'items' => $items
+        ]);;
     }
 
     /**
@@ -81,9 +88,15 @@ class KategoriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CategoriesRequest $request, $id)
     {
-        //
+        $data = $request->all();
+
+        $items = Category::find($id);
+        $items->update($data);
+
+        Alert::info('Success', 'Berhasil Update Data Kategori');
+        return redirect()->route('kategori.index');
     }
 
     /**
@@ -94,6 +107,10 @@ class KategoriController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $items = Category::find($id);
+        $items->delete();
+
+        Alert::info('Success', 'Berhasil Delete Data Kategori');
+        return redirect()->route('kategori.index');
     }
 }

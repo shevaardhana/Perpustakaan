@@ -19,9 +19,8 @@ class Book extends Model
         'stock'
     ];
 
-    public function category_list()
-    {
-        return $this->hasMany(Category::class, 'categories_id');
+    public function category(){
+        return $this->belongsTo(Book::class,'categories_id','id');
     }
 
     public function getPhotoAttribute($value)

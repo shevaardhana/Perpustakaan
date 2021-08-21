@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="d-sm-flex justify-content-end mb-4">
-    <a href="{{route('kategori.create')}}" class="btn btn-sm btn-primary shadow-sm">
+    <a href="{{route('buku.create')}}" class="btn btn-sm btn-primary shadow-sm">
         <i class="fas fa-plus fa-sm text-white-100"></i> Tambah Data Buku
     </a>
 </div>
@@ -34,15 +34,15 @@
                     <tr>
                         <td>{{ $no }}</td>
                         <td>{{ $value->judul }}</td>
-                        <td><img src="{{ url($value->photo) }}" alt="" style="width: 300px"/></td>
+                        <td><img src="{{ url($value->photo) }}" alt="" style="width: 200px"/></td>
                         <td>{{ $value->category->kategori }}</td>
                         <td>{{ $value->tanggal_terbit }}</td>
                         <td>{{ $value->stock }}</td>
                         <td style="text-align:center;">
-                            <a href="{{ route('kategori.edit', $value->id) }}" class="btn btn-primary btn-sm">
+                            <a href="{{ route('buku.edit', $value->id) }}" class="btn btn-primary btn-sm">
                                 <i class="fa fa-pencil"></i>
                             </a>
-                            <form action="{{ route('kategori.destroy', $value->id) }}" method="post" class="d-inline">
+                            <form action="{{ route('buku.destroy', $value->id) }}" method="post" class="d-inline">
                                 @csrf
                                 @method('delete')
                                 <button class="btn btn-danger btn-sm">

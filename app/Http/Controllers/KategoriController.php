@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CategoriesRequest;
 use Illuminate\Http\Request;
 use App\Models\Category;
-use Alert;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class KategoriController extends Controller
 {

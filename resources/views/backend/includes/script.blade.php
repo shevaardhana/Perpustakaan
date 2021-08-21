@@ -15,3 +15,15 @@
 <script src="{{asset('template/js/demo/chart-area-demo.js')}}"></script>
 <script src="{{asset('template/js/demo/chart-pie-demo.js')}}"></script>
 
+{{-- ckeditor --}}
+<script src="https://cdn.ckeditor.com/ckeditor5/29.1.0/classic/ckeditor.js"></script>
+<script>
+    ClassicEditor
+            .create( document.querySelector( '#editor' ) )
+            .then( editor => {
+                    console.log( editor );
+            } )
+            .catch( error => {
+                    console.error( error );
+            } );
+</script>

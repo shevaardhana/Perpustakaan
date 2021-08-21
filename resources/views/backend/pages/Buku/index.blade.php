@@ -22,6 +22,7 @@
                         <th>Photo</th>
                         <th>Kategori</th>
                         <th>Tanggal terbit</th>
+                        <th>Stock</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -32,7 +33,11 @@
 
                     <tr>
                         <td>{{ $no }}</td>
-                        <td>{{ $value->kategori }}</td>
+                        <td>{{ $value->judul }}</td>
+                        <td><img src="{{ url($value->photo) }}" alt="" style="width: 300px"/></td>
+                        <td>{{ $value->category->kategori }}</td>
+                        <td>{{ $value->tanggal_terbit }}</td>
+                        <td>{{ $value->stock }}</td>
                         <td style="text-align:center;">
                             <a href="{{ route('kategori.edit', $value->id) }}" class="btn btn-primary btn-sm">
                                 <i class="fa fa-pencil"></i>
@@ -48,7 +53,7 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="3" class="text-center">
+                        <td colspan="6" class="text-center">
                             Belum Ada Data Kategori
                         </td>
                     </tr>

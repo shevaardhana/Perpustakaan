@@ -19,4 +19,6 @@ Auth::routes();
 
 Route::resource('kategori', 'KategoriController');
 
+Route::resource('buku', 'BukuController');
+
 

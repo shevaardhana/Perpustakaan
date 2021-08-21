@@ -12,4 +12,8 @@ class Category extends Model
     protected $fillable = [
         'kategori'
     ];
+
+    public function listCategory(){
+        return $this->hasMany(Book::class, 'categories_id');
+    }
 }

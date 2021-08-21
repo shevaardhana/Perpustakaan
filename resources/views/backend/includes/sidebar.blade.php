@@ -25,7 +25,7 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
+        <a class="nav-link collapsed" href="{{route('buku.index')}}">
             <i class="fas fa-book"></i>
             <span>Buku</span>
         </a>

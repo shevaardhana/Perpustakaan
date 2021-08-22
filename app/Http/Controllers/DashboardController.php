@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\TransactionHeader;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -23,6 +24,16 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('backend.pages.dashboard');
+        $ongoing = TransactionHeader::where('status','ONGOING')->count();
+        $receive = TransactionHeader::where('status','RECEIVED')->count();
+        $process = TransactionHeader::where('status','PROCESS')->count();
+        $late = TransactionHeader::where('status','LATE')->count();
+
+        return view('backend.pages.dashboard')->with([
+            'ongoing' => $ongoing,
+            'receive' => $receive,
+            'process' => $process,
+            'late' => $late
+        ]);
     }
 }

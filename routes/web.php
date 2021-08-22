@@ -21,4 +21,9 @@ Route::resource('kategori', 'KategoriController');
 
 Route::resource('buku', 'BukuController');
 
+Route::get('peminjaman/{id}/set-status', 'TransactionController@setStatus')
+            ->name('peminjaman.status');
+
+Route::resource('peminjaman', 'TransactionController');
+
 

@@ -17,9 +17,9 @@
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead class="thead-dark text-center">
                     <tr>
-                        <th>No</th>
-                        <th>Kategori</th>
-                        <th>Action</th>
+                        <th>No <i class="fa fa-sort"></th>
+                        <th>Kategori <i class="fa fa-sort"></th>
+                        <th>Action <i class="fa fa-sort"></th>
                     </tr>
                 </thead>
                 <tbody>

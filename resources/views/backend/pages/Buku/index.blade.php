@@ -17,13 +17,13 @@
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead class="thead-dark text-center">
                     <tr>
-                        <th>No</th>
-                        <th>Judul</th>
-                        <th>Photo</th>
-                        <th>Kategori</th>
-                        <th>Tanggal terbit</th>
-                        <th>Stock</th>
-                        <th>Action</th>
+                        <th>No <i class="fa fa-sort"></i></th>
+                        <th>Judul <i class="fa fa-sort"></th>
+                        <th>Photo <i class="fa fa-sort"></th>
+                        <th>Kategori <i class="fa fa-sort"></th>
+                        <th>Tanggal terbit <i class="fa fa-sort"></th>
+                        <th>Stock <i class="fa fa-sort"></th>
+                        <th>Action <i class="fa fa-sort"></th>
                     </tr>
                 </thead>
                 <tbody>

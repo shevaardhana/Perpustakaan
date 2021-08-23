@@ -22,8 +22,13 @@ class TakeController extends Controller
             $details[] = new TransactionDetail([
                 'transaction_headers_id' => $transaction->id,
                 'books_id' => $book,
+                'jumlah_buku' => $book->jumlah_buku
             ]);
-            Book::find($book)->decrement('stock');
+
+            $stock = Book::find($book->stock);
+
+            $stock = $stock - $book->jumlah_buku;
+            return $stock;
         }
 
         $transaction->details()->saveMany($details);

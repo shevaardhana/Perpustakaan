@@ -20,4 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('books', 'API\BookController@all');
 Route::post('take', 'API\TakeController@take');
-Route::get('transaction/{id}', 'API\TransactionController@get');
+Route::get('peminjaman/{id}', 'API\TransactionController@get');

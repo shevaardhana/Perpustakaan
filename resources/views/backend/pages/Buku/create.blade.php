@@ -56,12 +56,6 @@
                     <input type="date" class="form-control" name="tanggal_terbit" value="{{ old('tanggal_terbit')}}" required>
                 </div>
 
-                <div class="form-group">
-                    <label for="stock" class="form-control-label">Stock</label>
-                    <input type="number" name="stock" value="{{ old('stock') }}" class="form-control @error('stock') is-invalid @enderror"/>
-                    @error('stock') <div class="text-muted">{{ $message }}</div> @enderror
-                </div>
-
                 <button type="submit" class="btn btn-primary btn-block">Simpan</button>
             </form>
          </div>

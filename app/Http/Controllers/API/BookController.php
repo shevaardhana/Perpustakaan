@@ -43,9 +43,6 @@ class BookController extends Controller
         if($judul)
             $book->where('judul', 'like', '%'. $judul .'%');
 
-        if($category->kategori)
-            $book->where('judul', 'like', '%'. $category->kategori .'%');
-
         return ResponseFormatter::success(
             $book->paginate($limit),
             'data list buku berhasil diambil'

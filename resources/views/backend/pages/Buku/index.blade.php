@@ -22,7 +22,6 @@
                         <th>Photo <i class="fa fa-sort"></th>
                         <th>Kategori <i class="fa fa-sort"></th>
                         <th>Tanggal terbit <i class="fa fa-sort"></th>
-                        <th>Stock <i class="fa fa-sort"></th>
                         <th>Action <i class="fa fa-sort"></th>
                     </tr>
                 </thead>
@@ -37,7 +36,6 @@
                         <td><img src="{{ url($value->photo) }}" alt="" style="width: 200px"/></td>
                         <td>{{ $value->category->kategori }}</td>
                         <td>{{ $value->tanggal_terbit }}</td>
-                        <td>{{ $value->stock }}</td>
                         <td style="text-align:center;">
                             <a href="{{ route('buku.edit', $value->id) }}" class="btn btn-primary btn-sm">
                                 <i class="fa fa-pencil"></i>

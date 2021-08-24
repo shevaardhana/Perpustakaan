@@ -24,11 +24,6 @@ class TakeController extends Controller
                 'books_id' => $book,
                 'jumlah_buku' => $book->jumlah_buku
             ]);
-
-            $stock = Book::find($book->stock);
-
-            $stock = $stock - $book->jumlah_buku;
-            return $stock;
         }
 
         $transaction->details()->saveMany($details);

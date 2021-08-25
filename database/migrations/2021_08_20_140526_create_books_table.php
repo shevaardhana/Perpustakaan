@@ -21,6 +21,7 @@ class CreateBooksTable extends Migration
             $table->longText('deskripsi');
             $table->integer('categories_id');
             $table->date('tanggal_terbit');
+            $table->integer('stock');
             $table->timestamps();
         });
     }

@@ -17,7 +17,6 @@ class CreateTransactionDetailsTable extends Migration
             $table->bigIncrements('id');
             $table->integer('transaction_headers_id');
             $table->integer('books_id');
-            $table->integer('jumlah_buku');
             $table->timestamps();
         });
     }

@@ -15,7 +15,8 @@ class Book extends Model
         'photo',
         'deskripsi',
         'categories_id',
-        'tanggal_terbit'
+        'tanggal_terbit',
+        'stock'
     ];
 
     public function category(){

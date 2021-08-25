@@ -29,6 +29,7 @@ class BookRequest extends FormRequest
             'deskripsi' => 'required',
             'categories_id' => 'required|integer|exists:categories,id',
             'tanggal_terbit' => 'required|date',
+            'stock' => 'required|integer'
         ];
     }
 }

@@ -20,13 +20,13 @@
         <td>
             <table class="table tabel-bordered w-100">
                 <tr>
-                    <th>Buku</th>
-                    <th>Jumlah</th>
+                    <th>Judul</th>
+                    <th>jumlah</th>
                 </tr>
                 @foreach ($item->details as $detail)
                     <tr>
                         <td>{{ $detail->book->judul }}</td>
-                        <td>{{ $detail->jumlah_buku }}</td>
+                        <td>1</td>
                     </tr>
                 @endforeach
             </table>

@@ -30,7 +30,7 @@ class TakeRequest extends FormRequest
             'tanggal_pengembalian' => 'required|date',
             'status' => 'nullable|string|in:PROCESS,RECEIVED,ONGOING,LATE',
             'transaction_details' => 'required|array',
-            'transaction_details.*' => 'integer|exist:books,id'
+            'transaction_details.*' => 'integer|exists:books,id'
         ];
     }
 }

@@ -11,8 +11,7 @@ class TransactionDetail extends Model
 
     protected $fillable = [
         'transaction_headers_id',
-        'books_id',
-        'jumlah_buku'
+        'books_id'
     ];
 
     public function Header()
